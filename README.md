@@ -1,4 +1,8 @@
 # ROSSMANN STORE SALES
+## Introdução
+Objetivo do projeto é fazer uma previsão de vendas a partir de dados históricos de vendas de 1.115 lojas Rossmann. Com isso, a tarefa é prever a coluna 'Sales' para o conjunto de teste. 
+
+Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para reforma. 
 
 ## Dataset Description
 ### Files
