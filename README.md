@@ -6,6 +6,7 @@ Objetivo do projeto é fazer uma previsão de vendas a partir de dados históric
 
 Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para reforma.
 
+
 ## Dataset Description
 
 ### Files
