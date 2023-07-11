@@ -1,10 +1,13 @@
 # ROSSMANN STORE SALES
-## Introdução
-Objetivo do projeto é fazer uma previsão de vendas a partir de dados históricos de vendas de 1.115 lojas Rossmann. Com isso, a tarefa é prever a coluna 'Sales' para o conjunto de teste. 
 
-Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para reforma. 
+## Introduction
+
+Objetivo do projeto é fazer uma previsão de vendas a partir de dados históricos de vendas de 1.115 lojas Rossmann. Com isso, a tarefa é prever a coluna 'Sales' para o conjunto de teste.
+
+Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para reforma.
 
 ## Dataset Description
+
 ### Files
 
 - train.csv - dados históricos, incluindo vendas
@@ -15,14 +18,14 @@ Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para ref
 ### Data fields
 
 - Id: um Id que representa uma duplicata (Store, Date) dentro do conjunto de teste
-- Loja: um ID exclusivo para cada loja
-- Vendas: o volume de negócios para um determinado dia (isto é o que você está prevendo)
-- Clientes: o número de clientes em um determinado dia
-- Aberto: um indicador para saber se a loja estava aberta: 0 = fechado, 1 = aberto
+- Store: um ID exclusivo para cada loja
+- Sales: o volume de negócios para um determinado dia (isto é vamos prever)
+- Customers: o número de clientes em um determinado dia
+- Open: um indicador para saber se a loja estava aberta: 0 = fechado, 1 = aberto
 - StateHoliday: indica um feriado estadual. Normalmente todas as lojas, com poucas exceções, fecham nos feriados estaduais. Observe que - todas as escolas fecham nos feriados e fins de semana. a = feriado, b = feriado da Páscoa, c = Natal, 0 = nenhum
 - SchoolHoliday: indica se o (Store, Date) foi afetado pelo fechamento das escolas públicas
 - StoreType: diferencia entre 4 modelos de loja diferentes: a, b, c, d
-- Sortimento: descreve um nível de sortimento: a = básico, b = extra, c = estendido
+- Assortment: descreve um nível de sortimento: a = básico, b = extra, c = estendido
 - CompetitionDistance: distância em metros até a loja concorrente mais próxima
 - CompetitionOpenSince[Month/Year]: fornece o ano e o mês aproximados da hora em que o concorrente mais próximo foi aberto
 - Promo: indica se uma loja está realizando uma promoção naquele dia
