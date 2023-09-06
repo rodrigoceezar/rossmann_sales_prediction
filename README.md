@@ -1,5 +1,7 @@
 # ROSSMANN STORE SALES: Previsão de Vendas 📊✅
 
+## Introdução
+
 Este é um projeto de previsão de vendas para as lojas da Rossmann, que segue o método CRISP-DS (Cross Industry Standard Process for Data Mining). O CRISP-DS é um processo padrão da indústria para projetos de mineração de dados e ciência de dados, que envolve várias etapas desde a compreensão do problema de negócios até a implantação do modelo. Vamos explicar cada etapa até agora:
 
 ## 1. Questão de Negócio
