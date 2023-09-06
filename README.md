@@ -1,35 +1,33 @@
 # ROSSMANN STORE SALES: Previsão de Vendas 📊✅
 
-## Introdução
+Este é um projeto de previsão de vendas para as lojas da Rossmann, que segue o método CRISP-DS (Cross Industry Standard Process for Data Mining). O CRISP-DS é um processo padrão da indústria para projetos de mineração de dados e ciência de dados, que envolve várias etapas desde a compreensão do problema de negócios até a implantação do modelo. Vamos explicar cada etapa até agora:
 
-Objetivo do projeto é fazer uma previsão de vendas a partir de dados históricos de vendas de 1.115 lojas Rossmann. Com isso, a tarefa é prever a coluna 'Sales' para o conjunto de teste.
+## 1. Questão de Negócio
+Recebemos a demanda de todos os gerentes de lojas da Rossmann para fazer uma previsão de vendas dos próximos 6 meses para cada uma das lojas. Essa é a questão de negócio que estamos tentando resolver.
 
-Obs: Algumas lojas no conjunto de dados foram temporáriamente fechadas para reforma.
+## 2. Entendimento do Negócio
+Para entender melhor o motivo dessa demanda, conversamos com as partes interessadas e descobrimos que o problema fundamental é que o CFO da Rossmann precisa estimar o orçamento para reformas das lojas, e isso depende diretamente das vendas futuras de cada loja. Portanto, a precisão na previsão de vendas é crucial para o planejamento financeiro.
 
+## 3. Coleta de Dados
+Na vida real, a coleta de dados envolveria solicitações de API, consultas SQL e integração de várias fontes de dados. No entanto, para fins práticos, optamos por usar os dados disponíveis na plataforma Kaggle como fonte de dados para este projeto.
 
-## Descritivo dos dados
+## 4. Limpeza dos Dados
+A limpeza dos dados é uma etapa crítica para garantir a qualidade dos dados de entrada no modelo de previsão. Dividimos esse processo em três passos:
+### Passo 1: Descrição dos Dados
+Começamos com uma análise geral dos dados para entender o tamanho do problema.
+### Passo 2: Feature Engineering
+Realizamos a engenharia de recursos para derivar variáveis adicionais que poderiam ser úteis em nossa análise, como extrair informações de data e hora.
+### Passo 3: Filtragem das Variáveis
+Filtramos as variáveis com base nas restrições de negócios, removendo aquelas que não são relevantes para a previsão de vendas.
 
-### Arquivos do projeto
+## 5. Exploração dos Dados
+Nesta etapa, realizamos análises univariadas, bivariadas e multivariadas para descobrir correlações, validar hipóteses e gerar insights sobre os dados. Isso nos ajuda a entender melhor o comportamento das variáveis e sua relação com as vendas.
 
-- train.csv - dados históricos, incluindo vendas
-- test.csv - dados históricos excluindo vendas
-- sample_submission.csv - um arquivo de envio de amostra no formato correto
-- store.csv - informações complementares sobre as lojas
+## 6. Modelagem dos Dados
+A modelagem dos dados é uma fase crítica onde construímos o modelo de previsão. Ela se divide em dois passos:
+### Passo 1: Preparação dos Dados
+Neste passo, aplicamos técnicas de pré-processamento, como rescaling, encoding e transformações, para deixar os dados o mais próximo possível de uma distribuição normal e para transformar variáveis categóricas em numéricas.
+### Passo 2: Filtragem das Variáveis Mais Relevantes
+Aqui, removemos variáveis colineares, ou seja, variáveis que explicam a mesma parte do fenômeno, para evitar multicolinearidade e melhorar a interpretabilidade do modelo.
 
-### Descritivo das colunas
-
-- Id: um Id que representa uma duplicata (Store, Date) dentro do conjunto de teste
-- Store: um ID exclusivo para cada loja
-- Sales: o volume de negócios para um determinado dia (isto é vamos prever)
-- Customers: o número de clientes em um determinado dia
-- Open: um indicador para saber se a loja estava aberta: 0 = fechado, 1 = aberto
-- StateHoliday: indica um feriado estadual. Normalmente todas as lojas, com poucas exceções, fecham nos feriados estaduais. Observe que - todas as escolas fecham nos feriados e fins de semana. a = feriado, b = feriado da Páscoa, c = Natal, 0 = nenhum
-- SchoolHoliday: indica se o (Store, Date) foi afetado pelo fechamento das escolas públicas
-- StoreType: diferencia entre 4 modelos de loja diferentes: a, b, c, d
-- Assortment: descreve um nível de sortimento: a = básico, b = extra, c = estendido
-- CompetitionDistance: distância em metros até a loja concorrente mais próxima
-- CompetitionOpenSince[Month/Year]: fornece o ano e o mês aproximados da hora em que o concorrente mais próximo foi aberto
-- Promo: indica se uma loja está realizando uma promoção naquele dia
-- Promo2: Promo2 é uma promoção contínua e consecutiva para algumas lojas: 0 = loja não está participando, 1 = loja está participando
-- Promo2Since[Year/Week]: descreve o ano e a semana em que a loja começou a participar do Promo2
-- PromoInterval: descreve os intervalos consecutivos em que o Promo2 é iniciado, nomeando os meses em que a promoção é reiniciada. Por exemplo, "fevereiro, maio, agosto, novembro" significa que cada rodada começa em fevereiro, maio, agosto, novembro de qualquer ano para essa loja
+Agora, estamos prontos para avançar para as etapas seguintes do CRISP-DS, que envolvem a seleção de algoritmos de machine learning, avaliação do desempenho do modelo e, se necessário, repetição do ciclo para ajustar o modelo até que ele atenda às expectativas de acurácia. Por fim, quando estivermos satisfeitos com o modelo, faremos o deploy para utilização prática.
