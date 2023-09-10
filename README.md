@@ -30,6 +30,18 @@ A modelagem dos dados é uma fase crítica onde construímos o modelo de previs�
 ### Passo 1: Preparação dos Dados
 Neste passo, aplicamos técnicas de pré-processamento, como rescaling, encoding e transformações, para deixar os dados o mais próximo possível de uma distribuição normal e para transformar variáveis categóricas em numéricas.
 ### Passo 2: Filtragem das Variáveis Mais Relevantes
-Aqui, removemos variáveis colineares, ou seja, variáveis que explicam a mesma parte do fenômeno, para evitar multicolinearidade e melhorar a interpretabilidade do modelo.
+Aqui, removemos variáveis colineares, ou seja, variáveis que explicam a mesma parte do fenômeno, para evitar multicolinearidade e melhorar a interpretabilidade do modelo. O metodo utilizado para fazer a seleção das variáveis mais importantes para o modelo foi **Boruta**. O método Boruta é útil para evitar overfitting, garantindo que apenas as variáveis verdadeiramente informativas sejam mantidas no modelo, contribuindo para um melhor desempenho de aprendizado de máquina e interpretabilidade dos resultados.
 
-Agora, estamos prontos para avançar para as etapas seguintes do CRISP-DS, que envolvem a seleção de algoritmos de machine learning, avaliação do desempenho do modelo e, se necessário, repetição do ciclo para ajustar o modelo até que ele atenda às expectativas de acurácia. Por fim, quando estivermos satisfeitos com o modelo, faremos o deploy para utilização prática.
+Aqui está uma breve visão geral:
+
+1. **Criação de Características Sombra**: O método cria uma cópia das variáveis de entrada, chamada de "características sombra".
+
+2. **Conjunto de Dados Expandido**: As variáveis originais e as características sombra são combinadas em um único conjunto de dados expandido.
+
+3. **Aprendizado de Máquina**: Aplica-se um algoritmo de aprendizado de máquina, como uma floresta aleatória, ao conjunto de dados expandido para avaliar a importância de cada variável.
+
+4. **Seleção Iterativa**: As variáveis originais que consistentemente superam as características sombra em importância estatística são selecionadas como relevantes.
+
+5. **Evita Overfitting**: Esse método ajuda a evitar o overfitting, garantindo que apenas as variáveis verdadeiramente informativas sejam mantidas no modelo, resultando em um melhor desempenho e interpretabilidade.
+
+Agora, estamos prontos para avançar para as etapas seguintes do CRISP-DS, que envolvem a seleção de algoritmos de machine learning, avaliação do desempenho do modelo e, se necessário, repetição do ciclo para ajustar o modelo até que ele atenda às expectativas de acurácia. 
